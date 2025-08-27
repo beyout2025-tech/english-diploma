@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">تحميل...</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f9fafb;
+      color: #222;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(to right, #2563eb, #1e40af);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+    .btn {
+      display: inline-block;
+      background: #22c55e;
+      color: white;
+      padding: 12px 25px;
+      margin: 8px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #16a34a;
+    }
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      color: #1e3a8a;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .feature {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #1e3a8a;
+      color: white;
+      text-align: center;
+      padding: 25px 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #22c55e;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header>
+    <h1 id="hero-title">...</h1>
+    <p id="hero-subtitle">...</p>
+    <div id="hero-buttons"></div>
+  </header>
+
+  <!-- Why Us Section -->
+  <section>
+    <h2 id="features-title">...</h2>
+    <div class="features" id="features-list"></div>
+  </section>
+
+  <!-- Motivation -->
+  <section>
+    <h2 id="motivation-title">...</h2>
+    <p id="motivation-text">...</p>
+    <div id="motivation-buttons"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p id="footer-text">...</p>
+  </footer>
+
+  <!-- استدعاء ملف الإعدادات -->
+  <script src="config.js"></script>
+  <script>
+    // تطبيق النصوص من ملف config.js
+    document.getElementById("page-title").innerText = siteConfig.pageTitle;
+    document.getElementById("hero-title").innerText = siteConfig.hero.title;
+    document.getElementById("hero-subtitle").innerText = siteConfig.hero.subtitle;
+
+    // أزرار الهيرو
+    let heroBtns = "";
+    siteConfig.hero.buttons.forEach(btn => {
+      heroBtns += `<a href="${btn.link}" class="btn">${btn.text}</a>`;
+    });
+    document.getElementById("hero-buttons").innerHTML = heroBtns;
+
+    // المميزات
+    document.getElementById("features-title").innerText = siteConfig.features.title;
+    let featuresHTML = "";
+    siteConfig.features.items.forEach(f => {
+      featuresHTML += `<div class="feature">${f}</div>`;
+    });
+    document.getElementById("features-list").innerHTML = featuresHTML;
+
+    // التحفيز
+    document.getElementById("motivation-title").innerText = siteConfig.motivation.title;
+    document.getElementById("motivation-text").innerText = siteConfig.motivation.text;
+    let motivationBtns = "";
+    siteConfig.motivation.buttons.forEach(btn => {
+      motivationBtns += `<a href="${btn.link}" class="btn">${btn.text}</a>`;
+    });
+    document.getElementById("motivation-buttons").innerHTML = motivationBtns;
+
+    // الفوتر
+    document.getElementById("footer-text").innerHTML = siteConfig.footer.text;
+  </script>
+
+</body>
+</html>
