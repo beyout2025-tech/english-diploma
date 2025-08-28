@@ -19,6 +19,9 @@
       --text-color: #1f2937;
       --bg-light: #f3f4f6;
       --bg-dark: #1f2937;
+      /* ألوان جديدة للزر الإضافي */
+      --btn-secondary-bg: #2563eb;
+      --btn-secondary-hover-bg: #1e52c8;
     }
 
     body {
@@ -63,11 +66,10 @@
 
     .buttons {
       margin-top: 2rem;
-      /* تنسيق الأزرار على سطح المكتب */
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1.5rem; /* مسافة بين الأزرار */
+      gap: 1.5rem;
     }
     
     .buttons a {
@@ -80,13 +82,21 @@
       font-size: 1.1rem;
       transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      white-space: nowrap; /* منع الكلمات من النزول لسطر جديد */
+      white-space: nowrap;
     }
 
     .buttons a:hover {
       background: #059669;
       transform: translateY(-3px); 
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .buttons .btn-secondary {
+      background: var(--btn-secondary-bg);
+    }
+
+    .buttons .btn-secondary:hover {
+      background: var(--btn-secondary-hover-bg);
     }
     
     .buttons i {
@@ -228,23 +238,24 @@
             font-size: 1.8rem;
         }
         
-        .buttons a {
-            font-size: 1rem;
-            padding: 0.8rem 1.5rem;
+        .buttons {
+          flex-direction: column;
+          gap: 1rem;
         }
 
-        .buttons {
-          flex-direction: column; /* جعل الأزرار تتكدس عمودياً */
-          gap: 1rem; /* مسافة مناسبة بين الأزرار */
+        .buttons a {
+          width: 100%; /* جعل الزر يأخذ عرض الأب بالكامل */
+          box-sizing: border-box; /* لضمان عدم خروج الزر عن حدود الشاشة */
         }
         
         header .logo img {
-            width: 250px;
-            height: 250px;
+            width: 80%; /* جعل الشعار يتكيف مع عرض الشاشة */
+            max-width: 250px;
+            height: auto; /* للحفاظ على نسب الأبعاد */
         }
-
+        
         .testimonial-card, .curriculum-list {
-          padding: 1rem; /* تقليل الحشوة الداخلية على الجوال */
+          padding: 1rem; 
         }
     }
   </style>
@@ -262,7 +273,7 @@
         <a href="https://wa.me/967777612552?text=أرغب%20في%20التسجيل%20بدبلوم%20اللغة%20الإنجليزية%20الشامل" target="_blank">
             سجل الآن وابدأ رحلتك <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://whatsapp.com/channel/0029VaCRNug3bbV13vVHyR0Z" target="_blank" style="background: #2563eb;">
+        <a href="https://whatsapp.com/channel/0029VaCRNug3bbV13vVHyR0Z" target="_blank" class="btn-secondary">
             انضم إلى قناتنا واتساب <i class="fab fa-whatsapp"></i>
         </a>
       </div>
@@ -315,7 +326,7 @@
       <a href="https://wa.me/967777612552?text=أرغب%20في%20التسجيل%20بدبلوم%20اللغة%20الإنجليزية%20الشامل" target="_blank">
           سجل الآن وابدأ رحلتك <i class="fab fa-whatsapp"></i>
       </a>
-      <a href="https://whatsapp.com/channel/0029VaCRNug3bbV13vVHyR0Z" target="_blank" style="background: #2563eb;">
+      <a href="https://whatsapp.com/channel/0029VaCRNug3bbV13vVHyR0Z" target="_blank" class="btn-secondary">
           انضم إلى قناتنا واتساب <i class="fab fa-whatsapp"></i>
       </a>
     </div>
