@@ -109,13 +109,13 @@
     .students button:nth-child(8n+8) { background-color: #34495e; }
 
     .dialog {
-      display: none;
+      /* تعديل هذا السطر */
+      display: none; 
       position: fixed;
       z-index: 200;
       left: 0; top: 0;
       width: 100%; height: 100%;
       background: rgba(0,0,0,0.5);
-      display: flex;
       justify-content: center;
       align-items: center;
     }
@@ -409,7 +409,6 @@
       content.classList.remove('animate__bounceIn');
       content.classList.add('animate__animated', 'animate__fadeOutDown');
       
-      // إخفاء النافذة بعد انتهاء مؤثر الخروج
       content.addEventListener('animationend', function handler(e) {
         if (e.animationName === 'fadeOutDown') {
           d.style.display = 'none';
