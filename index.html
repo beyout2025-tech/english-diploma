@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
@@ -64,11 +63,14 @@
 
     .buttons {
       margin-top: 2rem;
+      /* تنسيق الأزرار على سطح المكتب */
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem; /* مسافة بين الأزرار */
     }
     
     .buttons a {
-      display: inline-block;
-      margin: 0.75rem;
       padding: 1rem 2rem;
       background: var(--secondary-color);
       color: #fff;
@@ -78,6 +80,7 @@
       font-size: 1.1rem;
       transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      white-space: nowrap; /* منع الكلمات من النزول لسطر جديد */
     }
 
     .buttons a:hover {
@@ -128,7 +131,6 @@
     .curriculum-list {
         list-style: none;
         padding: 0;
-        text-align: right; 
         max-width: 600px; 
         margin: 0 auto;
     }
@@ -175,18 +177,6 @@
         color: var(--primary-color);
     }
     
-    .trainers-section {
-        background: #fff;
-    }
-    
-    .trainer-card {
-        max-width: 350px;
-        margin: 2rem auto;
-        padding: 1.5rem;
-        background: var(--bg-light);
-        border-radius: 12px;
-    }
-
     footer {
       background: var(--bg-dark);
       color: #fff;
@@ -242,10 +232,19 @@
             font-size: 1rem;
             padding: 0.8rem 1.5rem;
         }
+
+        .buttons {
+          flex-direction: column; /* جعل الأزرار تتكدس عمودياً */
+          gap: 1rem; /* مسافة مناسبة بين الأزرار */
+        }
         
         header .logo img {
             width: 250px;
             height: 250px;
+        }
+
+        .testimonial-card, .curriculum-list {
+          padding: 1rem; /* تقليل الحشوة الداخلية على الجوال */
         }
     }
   </style>
@@ -343,7 +342,7 @@
     </a>
   </div>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
