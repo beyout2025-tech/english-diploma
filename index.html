@@ -76,6 +76,87 @@
     .whatsapp-float i {
       margin-top: 15px;
     }
+    
+    .students {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0;
+      justify-content: center;
+    }
+    .students button {
+      padding: 10px 15px;
+      background: #16a085;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+    .students button:hover {
+      background: #138d75;
+    }
+
+    .dialog {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .dialog-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transform: scale(0.7) translateY(-50px);
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+    }
+    .dialog.show .dialog-content {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+    .dialog-content p {
+      margin: 0;
+      font-size: 15px;
+      color: #333;
+    }
+    .close {
+      float: right;
+      font-size: 22px;
+      font-weight: bold;
+      color: #666;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #000;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .contact-buttons a {
+      background-color: #25D366;
+      color: #fff;
+      padding: 12px;
+      text-decoration: none;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .contact-buttons a:hover {
+      background-color: #128c7e;
+    }
 
     /* تحسين العرض على الشاشات المتوسطة */
     @media (max-width: 768px) {
@@ -156,31 +237,101 @@
     <h2 data-aos="fade-up">💰 رسوم التسجيل:</h2>
     <p data-aos="fade-up">150$ فقط للبرنامج الكامل مع إمكانية التقسيط هذا لدول الخليج وللدول النامية النامية تخفيض خاص.</p>
 
+    <h2 data-aos="fade-up">🌟 آراء طلابنا:</h2>
+    <div class="students" data-aos="fade-up">
+      <button onclick="openDialog('ahmed')">أحمد محمد</button>
+      <button onclick="openDialog('fatima')">فاطمة علي</button>
+      <button onclick="openDialog('khaled')">خالد عبد الله</button>
+      <button onclick="openDialog('sara')">سارة حسين</button>
+      <button onclick="openDialog('yousef')">يوسف عبد الله</button>
+      <button onclick="openDialog('reem')">ريم أحمد</button>
+    </div>
+
     <h2 data-aos="fade-up">📞 للتسجيل والاستفسار:</h2>
-    <p>📍 مقر المؤسسة: ذمار - أمام مشروع المياه</p>
-    <p>📱 <a href="https://wa.me/967771901320" target="_blank">
-        <span data-aos="fade-right" data-aos-duration="1000">+967 771 901 320</span>
-      </a></p>
-    <p>📱 <a href="https://wa.me/967777612552" target="_blank">
-        <span data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">+967 777 612 552</span>
-      </a></p>
-    <p>📱 <a href="https://wa.me/967778185189" target="_blank">
-        <span data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">+967 778 185 189</span>
-      </a></p>
+    <div class="contact-buttons" data-aos="fade-up">
+      <a href="https://wa.me/967771901320" target="_blank">
+        <i class="fab fa-whatsapp"></i> واتساب (1)
+      </a>
+      <a href="https://wa.me/967777612552" target="_blank">
+        <i class="fab fa-whatsapp"></i> واتساب (2)
+      </a>
+      <a href="https://wa.me/967778185189" target="_blank">
+        <i class="fab fa-whatsapp"></i> واتساب (3)
+      </a>
+    </div>
   </div>
 
   <a href="https://wa.me/967771901320" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
+  <div id="ahmed" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('ahmed')">&times;</span>
+      <p>💬 "الدبلوم غير حياتي! الآن أقدر أتكلم إنجليزي بطلاقة."</p>
+    </div>
+  </div>
+  <div id="fatima" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('fatima')">&times;</span>
+      <p>💬 "أفضل مؤسسة تدريب تعاملت معها.. شرح واضح ومتابعة ممتازة."</p>
+    </div>
+  </div>
+  <div id="khaled" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('khaled')">&times;</span>
+      <p>💬 "أنصح الجميع بالتسجيل.. النتائج أسرع مما توقعت."</p>
+    </div>
+  </div>
+  <div id="sara" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('sara')">&times;</span>
+      <p>💬 "المدربين ممتازين، والأسلوب تفاعلي يخليك تحب اللغة."</p>
+    </div>
+  </div>
+  <div id="yousef" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('yousef')">&times;</span>
+      <p>💬 "تحسنت درجتي في IELTS خلال 3 أشهر فقط."</p>
+    </div>
+  </div>
+  <div id="reem" class="dialog">
+    <div class="dialog-content">
+      <span class="close" onclick="closeDialog('reem')">&times;</span>
+      <p>💬 "شرح مبسط وعملي جدًا، أشكر كل فريق كن أنت."</p>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 1200, // مدة الحركة بالمللي ثانية
-      easing: "ease-in-out", // نوع الحركة
-      once: true, // تشغيل الحركة مرة واحدة فقط عند التمرير
-      mirror: false // لا تعيد الحركة عند الرجوع بالتمرير
+      duration: 1200,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
     });
+    
+    function openDialog(id) {
+      let d = document.getElementById(id);
+      d.style.display = "block";
+      setTimeout(() => d.classList.add("show"), 10);
+    }
+    
+    function closeDialog(id) {
+      let d = document.getElementById(id);
+      d.classList.remove("show");
+      setTimeout(() => d.style.display = "none", 400);
+    }
+    
+    window.onclick = function(event) {
+      let dialogs = document.getElementsByClassName("dialog");
+      for (let d of dialogs) {
+        if (event.target == d) {
+          d.classList.remove("show");
+          setTimeout(() => d.style.display = "none", 400);
+        }
+      }
+    }
   </script>
 </body>
 </html>
