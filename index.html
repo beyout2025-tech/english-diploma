@@ -126,7 +126,7 @@
     }
     
     .curriculum-list {
-        list-style: none; /* إزالة النقاط الافتراضية */
+        list-style: none;
         padding: 0;
         text-align: right; 
         max-width: 600px; 
@@ -136,15 +136,15 @@
     .curriculum-list li {
         font-size: 1.1rem;
         margin-bottom: 0.75rem;
-        text-align: right; /* التأكيد على المحاذاة لليمين */
-        display: flex; /* لترتيب الأيقونة والنص بجانب بعضهما */
-        align-items: center; /* لمحاذاة الأيقونة والنص عمودياً */
-        justify-content: flex-start; /* لبدء العناصر من اليمين */
-        gap: 10px; /* مسافة بين الأيقونة والنص */
-        background: none; /* إزالة خلفية الـ li التي ورثتها من features-list */
-        box-shadow: none; /* إزالة الظل */
-        padding: 0; /* إزالة الحشوة */
-        flex: unset; /* إزالة الـ flex الخاص بـ features-list */
+        text-align: right;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        flex: unset;
     }
     
     .curriculum-list li i {
@@ -207,7 +207,7 @@
         bottom: 20px;
         right: 20px;
         z-index: 1000;
-        display: none; /* hide by default on large screens */
+        display: none; 
     }
     
     .floating-whatsapp a {
@@ -231,7 +231,7 @@
     /* Media Queries for Mobile */
     @media (max-width: 768px) {
         .floating-whatsapp {
-            display: flex; /* show only on mobile screens */
+            display: flex;
         }
         
         .hero-content h1 {
@@ -243,7 +243,7 @@
             padding: 0.8rem 1.5rem;
         }
         
-        header .logo img { /* تعديل حجم الشعار على الجوال */
+        header .logo img {
             width: 250px;
             height: 250px;
         }
@@ -261,7 +261,10 @@
       <p data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">من المبتدئ إلى الاحتراف خلال 6 أشهر فقط ✨</p>
       <div class="buttons" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
         <a href="https://wa.me/967777612552?text=أرغب%20في%20التسجيل%20بدبلوم%20اللغة%20الإنجليزية%20الشامل" target="_blank">
-            سجل الآن <i class="fab fa-whatsapp"></i>
+            سجل الآن وابدأ رحلتك <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://whatsapp.com/channel/0029VaCRNug3bbV13vVHyR0Z" target="_blank" style="background: #2563eb;">
+            انضم إلى قناتنا واتساب <i class="fab fa-whatsapp"></i>
         </a>
       </div>
     </div>
@@ -313,6 +316,9 @@
       <a href="https://wa.me/967777612552?text=أرغب%20في%20التسجيل%20بدبلوم%20اللغة%20الإنجليزية%20الشامل" target="_blank">
           سجل الآن وابدأ رحلتك <i class="fab fa-whatsapp"></i>
       </a>
+      <a href="https://whatsapp.com/channel/0029VaCRNug3bbV13vVHyR0Z" target="_blank" style="background: #2563eb;">
+          انضم إلى قناتنا واتساب <i class="fab fa-whatsapp"></i>
+      </a>
     </div>
   </section>
 
@@ -337,7 +343,7 @@
     </a>
   </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
   </script>
