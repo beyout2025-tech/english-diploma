@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دبلوم اللغة الإنجليزية | مؤسسة كن أنت</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --secondary-color: #10b981;
+      --text-color: #1f2937;
+      --bg-light: #f3f4f6;
+      --bg-dark: #1f2937;
+    }
+
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      background: #fff;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: #fff;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header .logo img {
+      height: 150px;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto 1.5rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+    }
+    
+    .buttons a {
+      display: inline-block;
+      margin: 0.75rem;
+      padding: 1rem 2rem;
+      background: var(--secondary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .buttons a:hover {
+      background: #059669;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .buttons i {
+        margin-left: 8px;
+    }
+
+    section {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    
+    section h2 {
+      color: var(--primary-color);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    ul.features-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    ul.features-list li {
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      flex: 1 1 250px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    
+    .curriculum-list li {
+        text-align: right;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .testimonials-section {
+      background: var(--bg-light);
+    }
+
+    .testimonial-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 2rem auto;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .testimonial-card p {
+        font-style: italic;
+        font-size: 1.1rem;
+    }
+
+    .testimonial-card .author {
+        margin-top: 1rem;
+        font-weight: 700;
+        color: var(--primary-color);
+    }
+    
+    .trainers-section {
+        background: #fff;
+    }
+    
+    .trainer-card {
+        max-width: 350px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+        background: var(--bg-light);
+        border-radius: 12px;
+    }
+
+    footer {
+      background: var(--bg-dark);
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+    
+    footer a {
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    /* Floating WhatsApp Button */
+    .floating-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        display: none; /* Hide by default on large screens */
+    }
+    
+    .floating-whatsapp a {
+        background: #25d366;
+        color: #fff;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        font-size: 1.8rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .floating-whatsapp a:hover {
+        transform: scale(1.1);
+    }
+
+    /* Media Queries for Mobile */
+    @media (max-width: 768px) {
+        .floating-whatsapp {
+            display: flex; /* Show only on mobile screens */
+        }
+        
+        .hero-content h1 {
+            font-size: 1.8rem;
+        }
+        
+        .buttons a {
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hero-content">
+      <div class="logo">
+        <img src="https://a.top4top.io/p_3527v5to41.jpg" alt="شعار مؤسسة كن أنت">
+      </div>
+      <h1>دبلوم اللغة الإنجليزية الشامل</h1>
+      <p>من المبتدئ إلى الاحتراف خلال 6 أشهر فقط ✨</p>
+      <div class="buttons">
+        <a href="https://wa.me/967777612552?text=أرغب%20في%20التسجيل%20بدبلوم%20اللغة%20الإنجليزية%20الشامل" target="_blank">
+            سجل الآن <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>لماذا تختار دبلومنا؟</h2>
+    <ul class="features-list">
+      <li><i class="fas fa-book-open"></i> منهج متكامل يناسب جميع المستويات</li>
+      <li><i class="fas fa-certificate"></i> شهادة رسمية معتمدة</li>
+      <li><i class="fas fa-users-line"></i> تدريب عملي مباشر مع خبراء</li>
+      <li><i class="fas fa-globe"></i> تدريب متاح أونلاين وحضوري</li>
+    </ul>
+  </section>
+  
+  <section style="background: var(--bg-light);">
+    <h2>ماذا ستتعلم في الدبلوم؟</h2>
+    <ul class="curriculum-list" style="text-align: right; max-width: 600px; margin: 0 auto;">
+        <li><i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> **القواعد الأساسية:** من الصفر حتى الاحتراف.</li>
+        <li><i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> **المحادثة:** التحدث بطلاقة وثقة في المواقف المختلفة.</li>
+        <li><i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> **الاستماع:** فهم الأفلام والأغاني والمحادثات السريعة.</li>
+        <li><i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> **الكتابة:** إتقان كتابة رسائل البريد الإلكتروني والتقارير.</li>
+        <li><i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> **المفردات:** بناء ثروة لغوية غنية ومتنوعة.</li>
+    </ul>
+  </section>
+
+  <section class="testimonials-section">
+    <h2>قصص نجاح من طلابنا</h2>
+    <div class="testimonial-card">
+      <p>"في البداية كنت متردداً، لكن بعد بضعة أشهر، تغيرت حياتي. الآن أستطيع التحدث بالإنجليزية في العمل بطلاقة. شكراً لكم!"</p>
+      <div class="author">
+        - أحمد علي
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <p>"المنهج العملي هو الأفضل! لم يعد الحفظ مجرد قواعد، بل ممارسة حقيقية. أنصح به كل من يريد تعلم الإنجليزية بجدية."</p>
+      <div class="author">
+        - سارة محمد
+      </div>
+    </div>
+  </section>
+  
+  <section style="background: #f3f4f6; padding: 2rem;">
+    <h2>لا تتردد، الفرصة أمامك الآن</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+      بعد 6 أشهر من الآن… إما أن تتقن الإنجليزية وتفتح أبواب العمل والسفر، أو تبقى حيث أنت الآن وتندم على الفرصة التي ضاعت.
+    </p>
+    <div class="buttons">
+      <a href="https://wa.me/967777612552?text=أرغب%20في%20التسجيل%20بدبلوم%20اللغة%20الإنجليزية%20الشامل" target="_blank">
+          سجل الآن وابدأ رحلتك <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>📞 **للتسجيل والاستفسار:**</p>
+    <a href="https://wa.me/967777612552?text=استفسار%20عن%20دبلوم%20اللغة%20الإنجليزية%20-1" target="_blank">
+        واتساب (الرقم 1)
+    </a>
+    |
+    <a href="https://wa.me/967771901320?text=استفسار%20عن%20دبلوم%20اللغة%20الإنجليزية%20-2" target="_blank">
+        واتساب (الرقم 2)
+    </a>
+    <br>
+    <p style="margin-top: 1rem;">
+      📢 تابع آخر الأخبار والعروض عبر <a href="https://whatsapp.com/channel/0029VaCRNug3bbV13vVHyR0Z" target="_blank">قناة واتساب</a>
+    </p>
+  </footer>
+  
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/967777612552?text=أرغب%20في%20التسجيل%20بدبلوم%20اللغة%20الإنجليزية%20الشامل" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+</body>
+</html>
