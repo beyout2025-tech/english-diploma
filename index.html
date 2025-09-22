@@ -2,9 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  	<!-- Google tag (gtag.js) -->
-<!-- Global site tag (gtag.js) - Google Ads -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17515401485"></script>
+  	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17515401485"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -19,6 +17,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 
   <style>
     body {
@@ -47,6 +47,8 @@
       color: #16a085;
       margin-top: 20px;
       font-size: 22px;
+      border-bottom: 2px solid #16a085;
+      padding-bottom: 5px;
     }
     p {
       font-size: 16px;
@@ -89,71 +91,6 @@
       margin-top: 15px;
     }
     
-    .students {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 20px 0;
-      justify-content: center;
-    }
-    .students button {
-      padding: 10px 15px;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 14px;
-      font-weight: bold;
-    }
-    .students button:hover {
-      opacity: 0.8;
-    }
-    /* ألوان الأزرار المتنوعة */
-    .students button:nth-child(8n+1) { background-color: #1abc9c; }
-    .students button:nth-child(8n+2) { background-color: #3498db; }
-    .students button:nth-child(8n+3) { background-color: #9b59b6; }
-    .students button:nth-child(8n+4) { background-color: #e67e22; }
-    .students button:nth-child(8n+5) { background-color: #e74c3c; }
-    .students button:nth-child(8n+6) { background-color: #f39c12; }
-    .students button:nth-child(8n+7) { background-color: #2ecc71; }
-    .students button:nth-child(8n+8) { background-color: #34495e; }
-
-    .dialog {
-      /* تعديل هذا السطر */
-      display: none; 
-      position: fixed;
-      z-index: 200;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-    }
-    .dialog-content {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-      max-width: 400px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-    .dialog-content p {
-      margin: 0;
-      font-size: 15px;
-      color: #333;
-    }
-    .close {
-      float: right;
-      font-size: 22px;
-      font-weight: bold;
-      color: #666;
-      cursor: pointer;
-    }
-    .close:hover {
-      color: #000;
-    }
-
     .contact-buttons-container {
       display: flex;
       flex-direction: column;
@@ -180,20 +117,12 @@
     .whatsapp-btn:hover {
       background-color: #128c7e;
     }
-    
     .other-course-btn {
       background-color: #3498db;
     }
     .other-course-btn:hover {
       background-color: #2980b9;
     }
-    .telegram-channel-btn {
-      background-color: #0088CC;
-    }
-    .telegram-channel-btn:hover {
-      background-color: #0077b3;
-    }
-
     .social-links {
         display: flex;
         justify-content: center;
@@ -223,8 +152,6 @@
     .social-links .linkedin { background: #0077b5; }
     .social-links .tiktok { background: #000; }
     .social-links .whatsapp-channel { background: #25D366; }
-
-    /* تحسين العرض على الشاشات المتوسطة */
     @media (max-width: 768px) {
       .container {
         width: 95%;
@@ -244,8 +171,6 @@
         padding-left: 20px;
       }
     }
-
-    /* للشاشات الصغيرة جداً (أقل من 480px) */
     @media (max-width: 480px) {
       h1 {
         font-size: 20px;
@@ -267,6 +192,152 @@
         margin-top: 12px;
       }
     }
+    .trainers-slider, .testimonials-slider {
+        margin: 30px 0;
+        height: auto; /* Changed from fixed height to auto */
+    }
+    .trainer-card {
+        text-align: center;
+        padding: 15px;
+        background: #fdfdfd;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        margin: 0 10px;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 320px;
+    }
+    .trainer-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #16a085;
+        margin-bottom: 10px;
+    }
+    .trainer-card h4 {
+        margin: 10px 0 5px 0;
+        color: #2c3e50;
+        font-size: 18px;
+    }
+    .trainer-card p {
+        font-size: 14px;
+        color: #666;
+        min-height: 60px;
+    }
+    /* Styles for Testimonial Cards */
+    .testimonial-card {
+        text-align: center;
+        padding: 20px;
+        background: #fdfdfd;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        margin: 0 10px;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        height: auto; /* Changed from fixed height to auto */
+        min-height: 250px; /* Ensures a minimum height */
+    }
+    .testimonial-card p.quote {
+        font-size: 16px;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 15px;
+        position: relative;
+    }
+    .testimonial-card p.quote:before {
+        content: '\201C';
+        font-size: 40px;
+        color: #16a085;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+    }
+    .testimonial-card p.quote:after {
+        content: '\201D';
+        font-size: 40px;
+        color: #16a085;
+        position: absolute;
+        bottom: -30px;
+        left: -10px;
+    }
+    .testimonial-card h4.student-name {
+        margin: 0;
+        color: #2c3e50;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .slick-prev:before, .slick-next:before {
+        color: #16a085;
+        font-size: 30px;
+    }
+    .slick-dots li button:before {
+        font-size: 12px;
+        color: #ccc;
+    }
+    .slick-dots li.slick-active button:before {
+        color: #16a085;
+    }
+    .slick-prev, .slick-next {
+        width: 40px;
+        height: 40px;
+        z-index: 10;
+    }
+    .slick-prev {
+        left: -45px;
+    }
+    .slick-next {
+        right: -45px;
+    }
+    @media (max-width: 768px) {
+        .slick-prev { left: -30px; }
+        .slick-next { right: -30px; }
+        .trainer-card, .testimonial-card { margin: 0 5px; height: auto; }
+        .trainers-slider, .testimonials-slider { height: auto; }
+        .testimonial-card p.quote:before, .testimonial-card p.quote:after { font-size: 30px; }
+    }
+    @media (max-width: 480px) {
+        .slick-prev { left: -20px; }
+        .slick-next { right: -20px; }
+        .trainer-card, .testimonial-card { margin: 0 2px; }
+        .slick-prev:before, .slick-next:before { font-size: 24px; }
+    }
+    .faq-item {
+        margin-bottom: 15px;
+    }
+    .faq-question {
+        background-color: #f2f2f2;
+        padding: 12px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    .faq-question:hover {
+        background-color: #e0e0e0;
+    }
+    .faq-question i {
+        transition: transform 0.3s ease;
+    }
+    .faq-answer {
+        display: none;
+        padding: 10px 15px;
+        background-color: #fafafa;
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        animation: fadeIn 0.5s ease-out;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
@@ -275,59 +346,147 @@
     <img src="https://i.ibb.co/MkRT9q1g/image.png" alt="شعار مؤسسة كن أنت" width="100" style="display:block; margin:auto;" data-aos="zoom-in">
     <h1 data-aos="flip-up">🎓 دبلوم اللغة الإنجليزية الشامل</h1>
 
-    <p data-aos="flip-left">📚 هل تحلم بإتقان اللغة الإنجليزية من الصفر حتى الاحتراف؟</p>
-    <p data-aos="flip-right">الآن مع <strong>مؤسسة كن أنت للتدريب</strong> نقدم لك <strong>دبلوم اللغة الإنجليزية</strong> المتكامل بإشراف نخبة من المدربين المتخصصين.</p>
+    <p data-aos="fade-up">هل سئمت من الفرص التي تضيع بسبب حاجز اللغة؟ هل تحلم بالتحدث بطلاقة، والسفر، والعمل في بيئة عالمية؟</p>
+    <p data-aos="fade-up">الآن مع <strong>مؤسسة كن أنت للتدريب</strong> نقدم لك <strong>دبلوم اللغة الإنجليزية</strong> المتكامل المصمم ليأخذك من الصفر إلى الاحتراف في 6 أشهر فقط.</p>
 
-    <div class="highlight" data-aos="flip-up">
-      <h2 data-aos="flip-down">مميزات الدبلوم:</h2>
+    <div class="highlight" data-aos="zoom-in">
+      <h2 data-aos="flip-down">لماذا هذا الدبلوم هو خطوتك الأولى نحو المستقبل؟</h2>
       <ul>
-        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>القواعد الأساسية:</strong> من الصفر حتى الاحتراف.</li>
-        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>المحادثة اليومية:</strong> محادثات عملية في مواقف الحياة.</li>
-        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>الكتابة الأكاديمية:</strong> مهارات كتابة احترافية.</li>
-        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>الاستماع والنطق:</strong> تدريبات عملية لإتقان اللكنة.</li>
-        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>التحضير للاختبارات الدولية:</strong> TOEFL & IELTS.</li>
+        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>القواعد الأساسية:</strong> نبدأ معك من الألف إلى الياء لتأسيس قاعدة صلبة.</li>
+        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>المحادثة اليومية:</strong> نكسر حاجز الخوف ونمنحك الثقة لتتحدث بطلاقة في أي موقف.</li>
+        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>الكتابة الأكاديمية:</strong> تعلم مهارات كتابة التقارير والرسائل الاحترافية.</li>
+        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>الاستماع والنطق:</strong> تدريبات عملية على اللكنة الصحيحة لتفهم وتُفهم بوضوح.</li>
+        <li data-aos="fade-right"><i class="fas fa-check-circle"></i> <strong>التحضير للاختبارات الدولية:</strong> نجهزك لتحقيق أعلى الدرجات في اختباري **TOEFL & IELTS**، جواز سفرك للعالم.</li>
       </ul>
     </div>
 
     <h2 data-aos="flip-up">📅 مدة البرنامج:</h2>
-    <p data-aos="flip-down">6 أشهر – بواقع 4 محاضرات أسبوعيًا (حضوري / أونلاين).</p>
+    <p data-aos="fade-down">6 أشهر – بواقع 4 محاضرات أسبوعيًا (حضوري / أونلاين).</p>
 
-    <h2 data-aos="flip-up">🎁 المزايا:</h2>
-    <ul data-aos="flip-down">
-      <li data-aos="fade-left"><i class="fas fa-star"></i> شهادة معتمدة من المؤسسة.</li>
-      <li data-aos="fade-left"><i class="fas fa-star"></i> مواد تعليمية إلكترونية مجانية.</li>
-      <li data-aos="fade-left"><i class="fas fa-star"></i> متابعة فردية للطلاب.</li>
-      <li data-aos="fade-left"><i class="fas fa-star"></i> مجموعات محادثة لتطوير المهارات.</li>
+    <h2 data-aos="flip-up">🎁 مزايا الدبلوم:</h2>
+    <ul data-aos="fade-down">
+      <li data-aos="fade-left"><i class="fas fa-certificate"></i> <strong>شهادة معتمدة</strong> من مؤسسة كن أنت للتدريب، تفتح لك أبواب العمل.</li>
+      <li data-aos="fade-left"><i class="fas fa-book"></i> مواد تعليمية إلكترونية مجانية لتسهيل عملية التعلم.</li>
+      <li data-aos="fade-left"><i class="fas fa-user-friends"></i> متابعة فردية مستمرة لضمان تطورك خطوة بخطوة.</li>
+      <li data-aos="fade-left"><i class="fas fa-comments"></i> مجموعات محادثة تفاعلية لتطوير مهاراتك بشكل عملي.</li>
     </ul>
 
+    <h2 data-aos="flip-up">🌟 نخبة من المدربين المعتمدين:</h2>
+    <div class="trainers-slider" data-aos="fade-up">
+        <div class="trainer-card">
+            <img src="https://i.ibb.co/rQfL014/male-trainer.jpg" alt="صورة المدرب محمود">
+            <h4>محمود قاسم</h4>
+            <p>ماجستير في اللغويات التطبيقية، خبرة 10 سنوات في تدريس الإنجليزية العامة والأكاديمية.</p>
+        </div>
+        <div class="trainer-card">
+            <img src="https://i.ibb.co/V9h4J9b/female-trainer.jpg" alt="صورة المدربة ريما">
+            <h4>ريما حسين</h4>
+            <p>مدرب معتمد من British Council، خبرة 8 سنوات في تطوير مهارات المحادثة والنطق.</p>
+        </div>
+        <div class="trainer-card">
+            <img src="https://i.ibb.co/bL0Wf6G/male-trainer2.jpg" alt="صورة المدرب أحمد">
+            <h4>أحمد محمد</h4>
+            <p>بكالوريوس آداب إنجليزي، متخصص في التحضير لاختبارات TOEFL و IELTS بنتائج ممتازة.</p>
+        </div>
+        <div class="trainer-card">
+            <img src="https://i.ibb.co/z60r307/female-trainer2.jpg" alt="صورة المدربة ليلى">
+            <h4>ليلى عبد الله</h4>
+            <p>معتمدة في تدريس اللغة الإنجليزية للأعمال (Business English)، خبرة 7 سنوات.</p>
+        </div>
+    </div>
+    
+    <h2 data-aos="flip-up">🌟 تجارب لا تُنسى:</h2>
+    <div class="testimonials-slider" data-aos="fade-up">
+        <div class="testimonial-card">
+            <p class="quote">لم أكن أتصور أنني سأتحدث بطلاقة بعد 3 أشهر فقط. الدبلوم غير حياتي وفتح لي آفاقاً جديدة في العمل.</p>
+            <h4 class="student-name">أحمد محمد</h4>
+        </div>
+        <div class="testimonial-card">
+            <p class="quote">أفضل مؤسسة تدريب تعاملت معها.. شرح واضح ومتابعة ممتازة من المدربين، أشعر أنني أحصل على دعم شخصي.</p>
+            <h4 class="student-name">فاطمة علي</h4>
+        </div>
+        <div class="testimonial-card">
+            <p class="quote">أنصح الجميع بالتسجيل، خاصة لمن يريدون نتائج سريعة. النتائج أسرع بكثير مما توقعت.</p>
+            <h4 class="student-name">خالد عبد الله</h4>
+        </div>
+        <div class="testimonial-card">
+            <p class="quote">المدربين ممتازين، والأسلوب تفاعلي يخليك تحب اللغة. كان كل درس ممتعاً ومفيداً.</p>
+            <h4 class="student-name">سارة حسين</h4>
+        </div>
+        <div class="testimonial-card">
+            <p class="quote">بفضل الدبلوم، تحسنت درجتي في اختبار IELTS بشكل كبير خلال فترة قصيرة.</p>
+            <h4 class="student-name">يوسف عبد الله</h4>
+        </div>
+        <div class="testimonial-card">
+            <p class="quote">شرح مبسط وعملي جدًا، أشكر كل فريق كن أنت. كل ما تعلمته كان قابلاً للتطبيق في حياتي اليومية.</p>
+            <h4 class="student-name">ريم أحمد</h4>
+        </div>
+        <div class="testimonial-card">
+            <p class="quote">كان الدبلوم تجربة رائعة! أصبحت الآن أكثر ثقة في استخدام اللغة الإنجليزية في اجتماعات العمل.</p>
+            <h4 class="student-name">اية علي</h4>
+        </div>
+        <div class="testimonial-card">
+            <p class="quote">بفضل هذا الدبلوم، تمكنت من الحصول على وظيفة أحلامي في شركة دولية. شكراً جزيلاً!</p>
+            <h4 class="student-name">نورهان قاسم</h4>
+        </div>
+    </div>
+    
     <h2 data-aos="flip-up">💰 رسوم التسجيل:</h2>
-    <p data-aos="flip-down">  رمزية مع إمكانية التقسيط .</p>
+    <p data-aos="fade-down">  رسوم رمزية مع إمكانية التقسيط المريح لتناسب ميزانيتك.</p>
 
-    <h2 data-aos="flip-up">🌟 آراء طلابنا:</h2>
-    <div class="students" data-aos="fade-up">
-      <button onclick="openDialog('ahmed')" data-aos="fade-up" data-aos-delay="50">أحمد محمد</button>
-      <button onclick="openDialog('fatima')" data-aos="fade-up" data-aos-delay="100">فاطمة علي</button>
-      <button onclick="openDialog('khaled')" data-aos="fade-up" data-aos-delay="150">خالد عبد الله</button>
-      <button onclick="openDialog('sara')" data-aos="fade-up" data-aos-delay="200">سارة حسين</button>
-      <button onclick="openDialog('yousef')" data-aos="fade-up" data-aos-delay="250">يوسف عبد الله</button>
-      <button onclick="openDialog('reem')" data-aos="fade-up" data-aos-delay="300">ريم أحمد</button>
-      <button onclick="openDialog('aya')" data-aos="fade-up" data-aos-delay="350">اية علي</button>
-      <button onclick="openDialog('nourhan')" data-aos="fade-up" data-aos-delay="400">نورهان قاسم</button>
+    <h2 data-aos="flip-up">❓ أسئلة شائعة:</h2>
+    <div class="faq-section" data-aos="fade-up">
+        <div class="faq-item">
+            <div class="faq-question">
+                هل أحتاج إلى أي خبرة مسبقة للالتحاق بالدبلوم؟
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>لا، الدبلوم مصمم خصيصاً ليناسب جميع المستويات، بدءاً من المبتدئين تماماً وصولاً إلى من يرغبون في صقل مهاراتهم.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                ما هو عدد الطلاب في كل فصل؟
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>نحرص على أن يكون عدد الطلاب محدوداً (بحد أقصى 15 طالباً) لضمان المتابعة الفردية لكل طالب وتقديم الدعم الكامل.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                كيف يمكنني دفع الرسوم؟
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>يمكن دفع الرسوم دفعة واحدة أو على أقساط مريحة على مدار فترة الدبلوم. يرجى التواصل معنا لمعرفة خطط التقسيط المتاحة.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                هل توجد مرونة في مواعيد المحاضرات؟
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>نوفر خيارات متنوعة للمواعيد (صباحية ومسائية) لتناسب جداول الطلاب المختلفة. يمكنك اختيار ما يناسبك.</p>
+            </div>
+        </div>
     </div>
 
-    <h2 data-aos="flip-up">📞 للتسجيل والاستفسار:</h2>
+    <h2 data-aos="flip-up">📞 لا تتردد، ابدأ رحلتك الآن!</h2>
     <div class="contact-buttons-container" data-aos="flip-down">
       <div class="whatsapp-row">
         <a href="https://wa.me/967771901320" target="_blank" class="whatsapp-btn">
-          <i class="fab fa-whatsapp"></i> واتساب (1)
+          <i class="fab fa-whatsapp"></i> تواصل عبر واتساب الآن
         </a>
         <a href="https://forms.gle/6iCC7Z71ift61Mu5A" target="_blank" class="whatsapp-btn">
-          <i class="fas fa-file-alt"></i> نموذج التسجيل
+          <i class="fas fa-file-alt"></i> املأ نموذج التسجيل
         </a>
       </div>
       <div class="whatsapp-row">
-        <a href="https://beyou20.github.io/BeYou/" class="whatsapp-btn other-course-btn">
-          <i class="fas fa-book"></i>الصفحة الرئيسية
+        <a href="https://skillia.netlify.app/" class="whatsapp-btn other-course-btn">
+          <i class="fas fa-book"></i>اكتشف دوراتنا الأخرى
         </a>
       </div>
     </div>
@@ -361,56 +520,10 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <div id="ahmed" class="dialog">
-    <div class="dialog-content">
-      <span class="close" onclick="closeDialog('ahmed')">&times;</span>
-      <p>💬 "الدبلوم غير حياتي! الآن أقدر أتكلم إنجليزي بطلاقة."</p>
-    </div>
-  </div>
-  <div id="fatima" class="dialog">
-    <div class="dialog-content">
-      <span class="close" onclick="closeDialog('fatima')">&times;</span>
-      <p>💬 "أفضل مؤسسة تدريب تعاملت معها.. شرح واضح ومتابعة ممتازة."</p>
-    </div>
-  </div>
-  <div id="khaled" class="dialog">
-    <div class="dialog-content">
-      <span class="close" onclick="closeDialog('khaled')">&times;</span>
-      <p>💬 "أنصح الجميع بالتسجيل.. النتائج أسرع مما توقعت."</p>
-    </div>
-  </div>
-  <div id="sara" class="dialog">
-    <div class="dialog-content">
-      <span class="close" onclick="closeDialog('sara')">&times;</span>
-      <p>💬 "المدربين ممتازين، والأسلوب تفاعلي يخليك تحب اللغة."</p>
-    </div>
-  </div>
-  <div id="yousef" class="dialog">
-    <div class="dialog-content">
-      <span class="close" onclick="closeDialog('yousef')">&times;</span>
-      <p>💬 "تحسنت درجتي في IELTS خلال 3 أشهر فقط."</p>
-    </div>
-  </div>
-  <div id="reem" class="dialog">
-    <div class="dialog-content">
-      <span class="close" onclick="closeDialog('reem')">&times;</span>
-      <p>💬 "شرح مبسط وعملي جدًا، أشكر كل فريق كن أنت."</p>
-    </div>
-  </div>
-  <div id="aya" class="dialog">
-    <div class="dialog-content">
-      <span class="close" onclick="closeDialog('aya')">&times;</span>
-      <p>💬 "كان الدبلوم تجربة رائعة! أصبحت الآن أكثر ثقة في استخدام اللغة الإنجليزية."</p>
-    </div>
-  </div>
-  <div id="nourhan" class="dialog">
-    <div class="dialog-content">
-      <span class="close" onclick="closeDialog('nourhan')">&times;</span>
-      <p>💬 "بفضل هذا الدبلوم، تمكنت من الحصول على وظيفة أحلامي. شكراً جزيلاً!"</p>
-    </div>
-  </div>
-
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
   <script>
     AOS.init({
       duration: 1200,
@@ -419,38 +532,77 @@
       mirror: false
     });
     
-    function openDialog(id) {
-      let d = document.getElementById(id);
-      let content = d.querySelector('.dialog-content');
-      d.style.display = "flex";
-      content.classList.remove('animate__fadeOutDown');
-      content.classList.add('animate__animated', 'animate__bounceIn');
-    }
-    
-    function closeDialog(id) {
-      let d = document.getElementById(id);
-      let content = d.querySelector('.dialog-content');
-      
-      content.classList.remove('animate__bounceIn');
-      content.classList.add('animate__animated', 'animate__fadeOutDown');
-      
-      content.addEventListener('animationend', function handler(e) {
-        if (e.animationName === 'fadeOutDown') {
-          d.style.display = 'none';
-          content.classList.remove('animate__animated', 'animate__fadeOutDown');
-          content.removeEventListener('animationend', handler);
-        }
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const answer = item.nextElementSibling;
+            const icon = item.querySelector('i');
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                answer.style.display = 'block';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
+
+    // Initialize Slick Slider for Trainers & Testimonials
+    $(document).ready(function(){
+      $('.trainers-slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 6000, // Adjusted to 6 seconds
+        rtl: true,
+        dots: true,
+        arrows: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
       });
-    }
-    
-    window.onclick = function(event) {
-      let dialogs = document.getElementsByClassName("dialog");
-      for (let d of dialogs) {
-        if (event.target == d) {
-          closeDialog(d.id);
-        }
-      }
-    }
+
+      $('.testimonials-slider').slick({
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000, // Adjusted to 4 seconds
+        rtl: true,
+        dots: true,
+        arrows: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+    });
   </script>
 </body>
 </html>
